@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DoYouLoveMe</title>
+    <link rel="stylesheet" href="doYouLoveMe.css">
+</head>
+<body>
+    <h1>Do You Love Me ?</h1>
+
+
+    <button id='bt1' onclick="tb()">Yes</button> &#160;&#160;
+    <button id= 'bt2' onmouseover='tele()' style="left:550px">No</button>
+
+<script >
+    function tb(){
+        alert('This is right choice');
+    }
+    function tele(){
+        // alert("aaa")
+
+        let element = document.getElementById('bt2');
+
+        //b1: Lay vị trí top hiện tại so với the cha
+        let posTop = element.offsetTop;
+        //b2: set vị trí mới
+        let newPosTop = (posTop + parseInt(Math.random()*100)) + 'px';
+        //b3: gan gia tri moi cho style.top
+        element.style.top = newPosTop ;
+        console.log( element.style.top);
+
+        let posLeft = element.style.left
+        let newPosLeft = posLeft + parseInt(Math.random()*100) + 'px';
+        element.style.left = newPosLeft;
+
+        //: thuộc tính style.top chỉ áp dụng cho thẻ trong html, ko truy cập đến file css
+        //: để xác định vị trí hiện tại của thẻ trong trình duyệt, ta dùng thuộc tính offsetTop;
+
+
+    }
+
+</script>
+
+</body>
+</html>
